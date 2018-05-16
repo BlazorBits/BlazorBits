@@ -1,0 +1,44 @@
+﻿@page "/monaco"
+@using BlazorBits.Monaco
+@using BlazorBits.Monaco.Shared
+
+<h2>Monaco using Blazor</h2>
+<div class="row">
+	<div class="col">
+		<button class="btn btn-primary mb-4 mr-2" onclick="@Reset">Clear</button>
+		<button class="btn btn-primary mb-4" onclick="@Update">Read</button>
+	</div>
+</div>
+<MonacoEditor ref="_editor" EditorModel="@_editorModel" Width="600" Height="300" />
+@functions {
+EditorModel _editorModel { get; set; }
+MonacoEditor _editor;
+
+protected override void OnInit()
+{
+	_editorModel = new EditorModel
+	{
+		Language = "csharp",
+		Script = @"using System;
+
+// Awesomeness
+public class Test
+{
+    public void X()
+    {
+        Console.WriteLine(""Hello world!"");
+    }
+}"
+	};
+}
+
+public void Update()
+{
+	_editor.EditorUpdate();
+}
+
+public void Reset()
+{
+	_editor.EditorSetValue("");
+}
+}

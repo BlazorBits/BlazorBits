@@ -1,0 +1,26 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+	<a class="navbar-brand" href="/"><img class="navbar-brand" alt="logo" src="https://avatars1.githubusercontent.com/u/39331180?s=30&amp;v=4">BlazorBits</a>
+	<button class="navbar-toggler" onclick=@ToggleNavMenu>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</div>
+<div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
+	<ul class="nav flex-column">
+		<li class="nav-item px-3">
+			<NavLink class="nav-link" href="/" Match=NavLinkMatch.All>
+				<i class="fas fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home
+			</NavLink>
+			<NavLink class="nav-link" href="/monaco">
+				<i class="fas fa-code" aria-hidden="true"></i>&nbsp;Monaco Editor
+			</NavLink>
+		</li>
+	</ul>
+</div>
+@functions {
+bool collapseNavMenu = true;
+
+void ToggleNavMenu()
+{
+	collapseNavMenu = !collapseNavMenu;
+}
+}

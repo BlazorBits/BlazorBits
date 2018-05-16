@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBits.Monaco", "BlazorBits.Monaco\BlazorBits.Monaco.csproj", "{1990A3D7-7B00-469F-BC97-F614393F7A52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBits.Website", "BlazorBits.Website\BlazorBits.Website.csproj", "{6926AB76-E1D0-43EA-851A-4FB3660D15A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35871806-8EBA-4E34-888C-9C5F7795268D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		BlazorBits.sln.vsspell = BlazorBits.sln.vsspell
+		editor.png = editor.png
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1990A3D7-7B00-469F-BC97-F614393F7A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1990A3D7-7B00-469F-BC97-F614393F7A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1990A3D7-7B00-469F-BC97-F614393F7A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1990A3D7-7B00-469F-BC97-F614393F7A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6926AB76-E1D0-43EA-851A-4FB3660D15A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6926AB76-E1D0-43EA-851A-4FB3660D15A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6926AB76-E1D0-43EA-851A-4FB3660D15A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6926AB76-E1D0-43EA-851A-4FB3660D15A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B9B5C87-8AF0-4846-81C5-798F5C654FB6}
+	EndGlobalSection
+EndGlobal

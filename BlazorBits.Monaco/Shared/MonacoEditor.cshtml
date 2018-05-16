@@ -1,0 +1,41 @@
+﻿@using BlazorBits.Monaco
+@using Microsoft.AspNetCore.Blazor.Components
+<div class="row">
+	<div class="col">
+		<div id="@EditorModel.Id" width="@Width" height="@Height" style="width:800px;height:600px;border:1px solid grey"></div>
+	</div>
+</div>
+@functions {
+
+[Parameter]
+EditorModel EditorModel { get; set; }
+
+[Parameter]
+int Width { get; set; } = 800;
+
+[Parameter]
+int Height { get; set; } = 600;
+
+bool _alreadyRendered = false;
+
+protected override void OnAfterRender()
+{
+	if (!_alreadyRendered)
+	{
+		Interop.EditorInitialize(EditorModel);
+		_alreadyRendered = true;
+	}
+}
+
+public void EditorUpdate()
+{
+	EditorModel = Interop.EditorGet(EditorModel);
+	Console.WriteLine($"Script is now: {EditorModel.Script}");
+}
+
+public void EditorSetValue(string newScript)
+{
+	EditorModel.Script = newScript;
+	EditorModel = Interop.EditorSet(EditorModel);
+}
+}
