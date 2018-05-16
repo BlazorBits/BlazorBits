@@ -18,7 +18,7 @@ if (-not (Test-Path $targetPath)) {
 }
 Write-Host @okTick
 
-#dotnet publish BlazorBits.Website/BlazorBits.Website.csproj -c release
+dotnet publish BlazorBits.Website/BlazorBits.Website.csproj -c release
 
 Write-Host "Copying files to [$targetPath]..." -NoNewline
 
