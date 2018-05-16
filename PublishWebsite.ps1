@@ -22,16 +22,19 @@ dotnet publish BlazorBits.Website/BlazorBits.Website.csproj -c release
 
 Write-Host "Copying files to [$targetPath]..." -NoNewline
 
-Copy-Item BlazorBits.Website\bin\release\netstandard2.0\publish\BlazorBits.Website\dist\* -Destination $targetPath -Recurse -Force
+$sourcePath = "BlazorBits.Website\bin\release\netstandard2.0\publish\BlazorBits.Website\dist"
+Copy-Item "$sourcePath\*" -Destination $targetPath -Recurse -Force
 
 Write-Host @okTick
+
+$version = Get-ChildItem "$sourcePath\_framework\_bin\BlazorBits.Website.dll" | select-object -ExpandProperty VersionInfo |Select-Object ProductVersion | Select-Object -ExpandProperty ProductVersion
 
 # Go to the target path
 Push-Location $targetPath
 
 git pull
 git status
-git commit -a -m "Updated website"
+git commit -a -m "Updated website to version $version"
 git push
 
 # Go back to where we were
