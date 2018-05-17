@@ -21,11 +21,11 @@ Blazor dependencies:
 To Install
 
 ```
-Install-Package BlazorComponents.Monaco
+Install-Package BlazorBits.Monaco
 ```
 or
 ```
-dotnet add package BlazorComponents.Monaco
+dotnet add package BlazorBits.Monaco
 ```
 
 ## Usage
@@ -34,8 +34,8 @@ dotnet add package BlazorComponents.Monaco
 
 ```html
 @page "/"
-@using BlazorComponents.Monaco
-@using BlazorComponents.Shared
+@using BlazorBits.Monaco
+@using BlazorBits.Shared
 
 <h2>Monaco using Blazor</h2>
 <div class="row">

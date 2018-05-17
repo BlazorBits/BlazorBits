@@ -22,7 +22,7 @@
     <PackageIconUrl>https://avatars1.githubusercontent.com/u/39331180?s=200&amp;v=4</PackageIconUrl>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <Copyright>Daniel Abbatt and David Bond (c) 2018</Copyright>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

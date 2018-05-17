@@ -8,8 +8,28 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" data-name="vs/editor/editor.main" href="monaco-editor/min/vs/editor/editor.main.css">
 	<link href="css/site.css" rel="stylesheet" />
+	<!-- Start IE11 -->
+	<!-- These IE11 support, required for Blazor 0.3, see conversation at https://learn-blazor.com/getting-started/getting-blazor/ -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+	<script>
+		function appPreroutine() {
+			if (document.baseURI == null || document.baseURI == undefined) {
+				// IE case
+				console.log("IE App Preroutine");
+				var port = "";
+				if (location.port != undefined && location.port != null && location.port != "")
+					port = ":" + location.port;
+
+				document.baseURI = location.protocol + "//" + location.hostname + port + "/";
+				console.log("IE App Preroutine complete");
+			}
+		}
+	</script>
+	<!-- end IE11 -->
 </head>
-<body>
+
+<body onload="appPreroutine()">
 	<app>Loading...</app>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
